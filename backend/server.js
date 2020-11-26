@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 // const exercisesRouter = require('./routes/exercises');
 // const usersRouter = require('./routes/users');
@@ -29,6 +30,11 @@ connection.once('open',()=>{
 // app.use('/users',usersRouter);
 
 app.use('/',indexRouter);
+
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
 
 // if(process.env.NODE_ENV === 'production'){
 //     app.use(express.static('../build'));
