@@ -81,38 +81,26 @@
 
 
     function CandidateDetails(props){
+        const styled={
+            textAlign : "left",
+            alignItems : "left"
+        }
+        const imgform = {
+            display: "inline-block",
+            verticalAlign: "left",
+            paddingRight : "0 50 0 0",
+            // fontSize: 100
+            // padding: 50,
+            // margin : 10
+        }
         return(
             <div>
-                    {/* <table className="table">
-                        <thead className="thead-light">
-                            <tr>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th>Event</th>
-                                <th>Date</th>
-                                <th>Month</th>
-                                <th>Year</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                                <tr key={props._id}>
-                                    <td>{props.event}</td>
-                                    <td>{candidate.name}</td>
-                                    <td>{candidate.event}</td>
-                                    <td>{candidate.date}</td>
-                                    <td>{candidate.month}</td>
-                                    <td>{candidate.year}</td>
-                                </tr>
-                        </tbody>
-                    </table> */}
-                    {/* <h1>{props.candidates.event}</h1> */}
             <img src="https://www.givemycertificate.com/assets/img/logo.png" alt="Provider logo" />
-            <img src="https://i.ya-webdesign.com/images/transparent-check-animated.gif" alt="Verified" />
+            <div style={styled , imgform}>
+            <img src="https://i.ya-webdesign.com/images/transparent-check-animated.gif" alt="Verified" width="430" />
+            </div>
                 <h1>{props.candidates.name}</h1>
-            <h3>Has participated in</h3>
-                <h3 className="title">{props.candidates.event}</h3>
-            <h3>Organized On</h3>
-            <h3 className="title">{props.candidates.month}, {props.candidates.date} {props.candidates.year}</h3>
+            <h3>Has participated in <b>{props.candidates.event}</b> Organized On {props.candidates.month}, {props.candidates.date} {props.candidates.year}</h3>
             </div>
         )
     }
